@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Sets character encoding so text displays correctly -->
+    <meta charset="UTF-8">
+
+    <!-- Helps page scale correctly on mobile screens -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Browser tab title -->
+    <title>Armando Sarza: About</title>
+
+    <!-- Google Font for cleaner text -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Links this page to the shared CSS file -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Header is reused so all pages feel connected -->
+    <header>
+        <h1>Armando Sarza</h1>
+
+        <!-- Navigation menu, same on every page -->
+        <nav>
+            <a href="index.html">Home</a>
+            <!-- active class shows this is the current page -->
+            <a href="about.html" class="active">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Content div for the About page -->
+    <div id="content">
+        <h2>About Me</h2>
+
+        <p>
+            I am a Computer Engineering student at CSU Monterey Bay Online. I enjoy learning how software works and building projects that help me understand programming better.
+        </p>
+
+        <h3>Programming Experience</h3>
+
+        <!-- Table is required for the About page rubric -->
+        <table>
+            <!-- Header row for the table -->
+            <tr id="table-header">
+                <td><strong>Programming Language</strong></td>
+                <td><strong>Experience Level</strong></td>
+            </tr>
+
+            <!-- Each row stores one language and my comfort level -->
+            <tr class="table-row">
+                <td>C++</td>
+                <td>Intermediate</td>
+            </tr>
+
+            <tr class="table-row">
+                <td>Java</td>
+                <td>Intermediate</td>
+            </tr>
+
+            <tr class="table-row">
+                <td>C</td>
+                <td>Intermediate</td>
+            </tr>
+
+            <tr class="table-row">
+                <td>x86 Assembly</td>
+                <td>Beginner / Intermediate</td>
+            </tr>
+
+            <tr class="table-row">
+                <td>HTML & CSS</td>
+                <td>Currently Learning</td>
+            </tr>
+        </table>
+
+        <h3>My Interests</h3>
+
+        <!-- List is required for the About page rubric -->
+        <ul class="interests-list">
+            <li>Programming: I like learning how code turns ideas into working projects.</li>
+            <li>Technology: I enjoy understanding computers, networks, and software systems.</li>
+            <li>Gaming: I like games because they mix creativity, problem-solving, and tech.</li>
+            <li>Learning: I am always trying to improve one step at a time.</li>
+        </ul>
+    </div>
+
+    <!-- Footer must match across all pages -->
+    <footer>
+        <hr>
+
+        <!-- CSUMB logo required by the rubric -->
+        <img src="img/csumb-logo.png" alt="CSUMB Logo" class="csumb-logo">
+
+        <p>
+            CST336 Internet Programming. 2026&copy; Sarza
+        </p>
+
+        <p>
+            <strong>Disclaimer:</strong> The information in this webpage is fictitious. It is used for academic purposes only.
+        </p>
+    </footer>
+</body>
+</html>

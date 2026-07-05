@@ -1,0 +1,132 @@
+/* This changes the basic look for the whole website */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #222222;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* This styles the big title area at the top */
+header {
+    background-color: #1f3c88;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+/* This removes extra space above and below the main title */
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+/* This styles the short sentence under the title */
+header p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* This styles the navigation bar */
+nav {
+    background-color: #17224d;
+    text-align: center;
+    padding: 12px;
+}
+
+/* This styles each navigation link */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
+
+/* This changes the link when the mouse goes over it */
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* This keeps the main page content from stretching too wide */
+main {
+    width: 85%;
+    margin: 25px auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+/* This styles sections so they have some space between them */
+section {
+    margin-bottom: 25px;
+}
+
+/* This styles the smaller headings */
+h2 {
+    color: #1f3c88;
+    border-bottom: 2px solid #d6dce8;
+    padding-bottom: 5px;
+}
+
+/* This styles images on the pages */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Figure is used to keep an image and caption together */
+figure {
+    text-align: center;
+    margin: 25px 0;
+}
+
+/* This styles the image caption */
+figcaption {
+    font-size: 14px;
+    color: #555555;
+    margin-top: 8px;
+}
+
+/* This is a simple card style for content boxes */
+.card {
+    background-color: #eef3ff;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px #cccccc;
+    margin-bottom: 20px;
+}
+
+/* This makes a two-column layout for one page */
+.two-column {
+    display: flex;
+    gap: 20px;
+}
+
+/* This styles each column in the two-column layout */
+.column {
+    flex: 1;
+    background-color: #eef3ff;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* This styles unordered lists */
+ul {
+    padding-left: 25px;
+}
+
+/* This styles regular links inside the main content */
+main a {
+    color: #1f3c88;
+}
+
+/* This styles the bottom footer */
+footer {
+    background-color: #17224d;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}

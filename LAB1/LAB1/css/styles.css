@@ -1,0 +1,196 @@
+/* This styles the whole website */
+body {
+    background-color: #101820;
+    color: #f2f2f2;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* This centers the main top title */
+header {
+    text-align: center;
+    padding-top: 30px;
+}
+
+/* Main name at the top of every page */
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+/* Makes page headings stand out */
+h2 {
+    color: #f2aa4c;
+    font-size: 2em;
+}
+
+/* Smaller section headings */
+h3 {
+    color: #f2aa4c;
+    margin-top: 35px;
+}
+
+/* Navigation container */
+nav {
+    margin: 20px 0;
+}
+
+/* Styles only links inside the nav bar */
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 18px;
+    margin: 0 5px;
+    border-radius: 8px;
+}
+
+/* Hover effect required by the rubric */
+nav a:hover {
+    background-color: #f2aa4c;
+    color: #101820;
+    transition: 0.3s;
+}
+
+/* This makes the current page menu item stand out */
+nav a.active {
+    background-color: #f2aa4c;
+    color: #101820;
+    font-weight: bold;
+}
+
+/* Home page layout uses flexbox, required by the lab */
+.home-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    width: 85%;
+    margin: 40px auto;
+}
+
+/* Removes weird default spacing around figure */
+figure {
+    margin: 0;
+}
+
+/* Styles my profile picture */
+.profile-img {
+    width: 320px;
+    border-radius: 25px;
+    border: 4px solid #f2aa4c;
+}
+
+/* This is the text card next to my image */
+.intro-card {
+    max-width: 430px;
+    background-color: #1f2933;
+    padding: 25px;
+    border-radius: 18px;
+    text-align: left;
+}
+
+/* Makes paragraphs easier to read */
+p {
+    line-height: 1.6;
+}
+
+/* Quote text on the home page */
+.quote {
+    color: #f2aa4c;
+    font-style: italic;
+    margin-top: 25px;
+}
+
+/* Shared content box for About and Contact pages */
+#content {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #1f2933;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+/* Centers the table on the About page */
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+/* Gives table cells spacing and borders */
+td {
+    padding: 12px;
+    border: 1px solid #f2aa4c;
+}
+
+/* Makes the table header row pop */
+#table-header {
+    background-color: #f2aa4c;
+    color: #101820;
+}
+
+/* Gives regular table rows a darker color */
+.table-row {
+    background-color: #25313d;
+}
+
+/* Makes table rows react when the mouse goes over them */
+.table-row:hover {
+    background-color: #35495e;
+}
+
+/* Styles the interests list on the About page */
+.interests-list {
+    display: inline-block;
+    text-align: left;
+    line-height: 1.8;
+    max-width: 700px;
+}
+
+/* Styles the Google Form iframe */
+iframe {
+    width: 100%;
+    max-width: 700px;
+    border: 3px solid #f2aa4c;
+    border-radius: 12px;
+    background-color: white;
+}
+
+/* Footer is required across all pages */
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    color: #b8c6d1;
+    margin-top: 50px;
+    padding-bottom: 25px;
+}
+
+/* CSUMB logo in footer */
+.csumb-logo {
+    width: 120px;
+    margin-top: 15px;
+}
+
+/* Makes the page look decent on smaller screens */
+@media screen and (max-width: 768px) {
+    /* Stacks image and text instead of squeezing them */
+    .home-layout {
+        flex-direction: column;
+    }
+
+    /* Makes image smaller on phones */
+    .profile-img {
+        width: 260px;
+    }
+
+    /* Makes nav links stack nicer if screen is small */
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+}
