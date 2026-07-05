@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- This helps the page fit better on different screen sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Guess a Number</title>
+
+    <!-- Linking the CSS file so the page can look nicer -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Header area for the game title and instructions -->
+    <header>
+        <h1>Guess the Number!</h1>
+        <h2>Guess a number between 1 and 99 in seven attempts!</h2>
+    </header>
+
+    <br>
+
+    <!-- Main game area -->
+    <div id="main" class="game-container">
+
+        <!-- This is where the player enters their guess -->
+        Enter a guess:
+        <input type="text" id="playerGuess" size="5">
+
+        <br><br>
+
+        <!-- Button used to submit the player's guess -->
+        <button id="guessBtn">Guess</button>
+
+        <!-- Button used to reset the game after winning or losing -->
+        <button id="resetBtn">Reset</button>
+
+        <!-- This is where messages like too high, too low, or error messages show up -->
+        <div id="feedback"></div>
+
+        <!-- This shows how many attempts the player has left -->
+        <p>Attempts Left: <span id="attemptsLeft">7</span></p>
+
+        <!-- This shows all the guesses the player already tried -->
+        <p>Previous Guesses: <span id="previousGuesses"></span></p>
+
+        <!-- This shows the total wins -->
+        <p>Wins: <span id="wins">0</span></p>
+
+        <!-- This shows the total losses -->
+        <p>Losses: <span id="losses">0</span></p>
+
+    </div>
+
+    <!-- Footer similar to Lab 1 -->
+    <footer>
+        <p>Sarza | Internet Programming | CSUMB</p>
+
+        <img src="img/csumb-logo.png" alt="CSUMB Logo" class="csumb-logo">
+    </footer>
+
+    <!-- Linking the JavaScript file so the guessing game works -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
