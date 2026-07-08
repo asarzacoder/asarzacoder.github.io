@@ -1,0 +1,81 @@
+/* Styling the whole page */
+body {
+    background-color: #6a503885;
+    font-family: Arial, sans-serif;
+}
+
+/* Styling the main heading with a background image */
+.quiz-heading {
+    background-image: url("../img/headingBackground.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* This darkens the image a bit so the title is easier to read */
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: darken;
+
+    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 56px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 6px black;
+
+    padding: 70px 20px;
+    margin: 0;
+    border-bottom: 5px solid #0dcaf0;
+}
+
+/* Main quiz box */
+.quiz-box {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 15px gray;
+}
+
+/* Each question gets its own card-like area */
+.question-card {
+    background-color: #f8f9fa;
+    border: 1px solid #d6d6d6;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Spacing for question titles */
+.question-card h3 {
+    margin-bottom: 15px;
+}
+
+/* Feedback message styling */
+.feedback {
+    margin-top: 12px;
+    padding: 8px;
+    font-weight: bold;
+}
+
+/* Checkmark and X image size */
+.mark-img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+/* Adds spacing between checkbox and radio labels */
+label {
+    margin-right: 15px;
+    margin-left: 4px;
+}
+
+/* Footer styling */
+.footer-box {
+    background-color: white;
+    border-top: 4px solid #0dcaf0;
+}
+
+/* CSUMB logo size */
+.csumb-logo {
+    width: 120px;
+    height: auto;
+}

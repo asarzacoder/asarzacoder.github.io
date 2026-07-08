@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- This helps the page look normal on different screen sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>US Geography Quiz</title>
+
+    <!-- Bootstrap helps make the page look better without writing tons of CSS from scratch -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- Linking my own CSS file for extra styling -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="text-center">
+
+    <!-- Main title for the quiz with a background image -->
+    <h1 class="quiz-heading">US Geography Quiz</h1>
+
+    <!-- Main quiz container -->
+    <main class="container quiz-box mt-4 mb-4 p-4">
+
+        <!-- Question 1: text input -->
+        <section class="question-card">
+            <h3><span id="markImg1"></span>1. What is the capital of California?</h3>
+
+            <!-- The user types the answer here -->
+            <input type="text" id="q1" class="form-control w-50 mx-auto" placeholder="Type your answer">
+
+            <div id="q1Feedback" class="feedback"></div>
+        </section>
+
+        <!-- Question 2: dropdown -->
+        <section class="question-card">
+            <h3><span id="markImg2"></span>2. What is the longest river in the United States?</h3>
+
+            <!-- Dropdown menu for one answer -->
+            <select id="q2" class="form-select w-50 mx-auto">
+                <option value="">Select One</option>
+                <option value="ms">Mississippi</option>
+                <option value="mo">Missouri</option>
+                <option value="co">Colorado</option>
+                <option value="de">Delaware</option>
+            </select>
+
+            <div id="q2Feedback" class="feedback"></div>
+        </section>
+
+        <!-- Question 3: checkboxes -->
+        <section class="question-card">
+            <h3><span id="markImg3"></span>3. Which of these presidents are carved into Mount Rushmore?</h3>
+
+            <!-- Checkboxes let the user select multiple answers -->
+            <input type="checkbox" id="Jackson">
+            <label for="Jackson">A. Jackson</label>
+
+            <input type="checkbox" id="Franklin">
+            <label for="Franklin">B. Franklin</label>
+
+            <input type="checkbox" id="Jefferson">
+            <label for="Jefferson">T. Jefferson</label>
+
+            <input type="checkbox" id="Roosevelt">
+            <label for="Roosevelt">T. Roosevelt</label>
+
+            <div id="q3Feedback" class="feedback"></div>
+        </section>
+
+        <!-- Question 4: text input -->
+        <section class="question-card">
+            <h3><span id="markImg4"></span>4. What ocean is on the west coast of the United States?</h3>
+
+            <!-- Another text input question -->
+            <input type="text" id="q4" class="form-control w-50 mx-auto" placeholder="Type your answer">
+
+            <div id="q4Feedback" class="feedback"></div>
+        </section>
+
+        <!-- Question 5: dropdown -->
+        <section class="question-card">
+            <h3><span id="markImg5"></span>5. Which state is known as the Sunshine State?</h3>
+
+            <!-- Dropdown answer choices -->
+            <select id="q5" class="form-select w-50 mx-auto">
+                <option value="">Select One</option>
+                <option value="ca">California</option>
+                <option value="fl">Florida</option>
+                <option value="tx">Texas</option>
+                <option value="az">Arizona</option>
+            </select>
+
+            <div id="q5Feedback" class="feedback"></div>
+        </section>
+
+        <!-- Question 6: number input -->
+        <section class="question-card">
+            <h3><span id="markImg6"></span>6. How many states are in the United States?</h3>
+
+            <!-- Number input because the answer should be a number -->
+            <input type="number" id="q6" class="form-control w-50 mx-auto" placeholder="Type a number">
+
+            <div id="q6Feedback" class="feedback"></div>
+        </section>
+
+        <!-- Question 7: dropdown -->
+        <section class="question-card">
+            <h3><span id="markImg7"></span>7. Which state is the Grand Canyon located in?</h3>
+
+            <!-- Dropdown for a state answer -->
+            <select id="q7" class="form-select w-50 mx-auto">
+                <option value="">Select One</option>
+                <option value="nv">Nevada</option>
+                <option value="az">Arizona</option>
+                <option value="ut">Utah</option>
+                <option value="nm">New Mexico</option>
+            </select>
+
+            <div id="q7Feedback" class="feedback"></div>
+        </section>
+
+        <!-- Question 8: checkboxes -->
+        <section class="question-card">
+            <h3><span id="markImg8"></span>8. Which of these are Great Lakes?</h3>
+
+            <!-- Checkboxes because more than one answer is correct -->
+            <input type="checkbox" id="Superior">
+            <label for="Superior">Lake Superior</label>
+
+            <input type="checkbox" id="Michigan">
+            <label for="Michigan">Lake Michigan</label>
+
+            <input type="checkbox" id="Tahoe">
+            <label for="Tahoe">Lake Tahoe</label>
+
+            <input type="checkbox" id="Erie">
+            <label for="Erie">Lake Erie</label>
+
+            <div id="q8Feedback" class="feedback"></div>
+        </section>
+
+        <!-- Question 9: randomized radio buttons -->
+        <section class="question-card">
+            <h3><span id="markImg9"></span>9. What is the smallest US state?</h3>
+
+            <!-- JavaScript will create the shuffled radio button choices here -->
+            <div id="q9Choices"></div>
+
+            <div id="q9Feedback" class="feedback"></div>
+        </section>
+
+        <!-- Question 10: text input -->
+        <section class="question-card">
+            <h3><span id="markImg10"></span>10. What is the capital of the United States?</h3>
+
+            <!-- Text input for the final question -->
+            <input type="text" id="q10" class="form-control w-50 mx-auto" placeholder="Type your answer">
+
+            <div id="q10Feedback" class="feedback"></div>
+        </section>
+
+        <!-- This area shows validation errors if the user skips a question -->
+        <h3 id="validationFdbk" class="bg-danger text-white rounded p-2"></h3>
+
+        <!-- This button submits the quiz -->
+        <button class="btn btn-outline-primary btn-lg mt-3">Submit Quiz</button>
+
+        <!-- This shows the user's total score -->
+        <h2 id="totalScore" class="mt-4"></h2>
+
+        <!-- This shows a message if the score is above 80 -->
+        <h3 id="congratsMessage"></h3>
+
+        <!-- This shows how many times the quiz has been taken on this browser -->
+        <h3 id="totalAttempts"></h3>
+
+    </main>
+
+    <!-- Footer similar to Lab 1 -->
+    <footer class="footer-box p-3">
+        <p>Sarza | Internet Programming | CSUMB</p>
+
+        <!-- Make sure this image is inside the img folder -->
+        <img src="img/csumb_logo.png" alt="CSUMB Logo" class="csumb-logo">
+    </footer>
+
+    <!-- Connecting my JavaScript file so the quiz works -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
