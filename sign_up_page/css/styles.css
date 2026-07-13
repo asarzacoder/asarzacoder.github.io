@@ -1,0 +1,166 @@
+/* Whole page coffee shop vibe with a coffee shop background image */
+body {
+    background-image: linear-gradient(
+        rgba(70, 45, 28, 0.45),
+        rgba(70, 45, 28, 0.45)
+    ), url("../img/coffeeShopBackground.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    font-family: Georgia, "Times New Roman", serif;
+    color: #3b2618;
+}
+
+/* Main form card */
+.signup-card {
+    max-width: 720px;
+    margin: auto;
+    border-radius: 22px;
+    overflow: hidden;
+    border: none;
+    background-color: rgba(255, 248, 239, 0.325);
+    box-shadow: 0 12px 30px rgba(59, 38, 24, 0.35);
+    backdrop-filter: blur(4px);
+}
+
+/* Coffee-style header */
+.signup-header {
+    background: linear-gradient(135deg, #3b2618, #6b4f3f);
+    color: #fff4e6;
+    padding: 35px 25px;
+    border-bottom: 6px solid #c8a27a;
+}
+
+/* Header title */
+.signup-header h1 {
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 42px;
+    letter-spacing: 1px;
+}
+
+/* Adds a small coffee emoji before the heading */
+.signup-header h1::before {
+    content: "☕ ";
+}
+
+/* Header subtitle */
+.signup-header p {
+    margin-bottom: 0;
+    font-size: 18px;
+    color: #f3d8b8;
+}
+
+/* Card body */
+.card-body {
+    background-color: rgba(255, 248, 239, 0.308);
+    padding: 30px;
+}
+
+/* Form label styling */
+.form-label {
+    font-weight: bold;
+    color: #4b2f1f;
+}
+
+/* Textboxes and dropdowns */
+.form-control,
+.form-select {
+    border-radius: 14px;
+    border: 2px solid #d6b895;
+    background-color: #fffdf8;
+    color: #3b2618;
+    padding: 10px;
+}
+
+/* Focus effect for inputs */
+.form-control:focus,
+.form-select:focus {
+    border-color: #8b5e34;
+    box-shadow: 0 0 8px rgba(139, 94, 52, 0.5);
+}
+
+/* Radio button spacing */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Location info box */
+.location-box {
+    background-color: #f7eadb;
+    border: 2px dashed #c8a27a;
+    border-radius: 16px;
+    padding: 15px;
+    color: #4b2f1f;
+}
+
+/* Location text spacing */
+.location-box p {
+    margin-bottom: 6px;
+}
+
+/* Small API/validation messages */
+.message {
+    display: inline-block;
+    margin-top: 7px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+/* Submit button */
+.btn-primary {
+    background-color: #6f4e37;
+    border-color: #6f4e37;
+    border-radius: 25px;
+    padding: 12px 35px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Submit button hover */
+.btn-primary:hover {
+    background-color: #4b2f1f;
+    border-color: #4b2f1f;
+}
+
+/* Footer area */
+.footer-box {
+    background-color: #fff8ef;
+    max-width: 720px;
+    margin: auto;
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 8px 20px rgba(59, 38, 24, 0.25);
+    border-top: 5px solid #8b5e34;
+}
+
+/* Footer text */
+.footer-box p {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #4b2f1f;
+}
+
+/* CSUMB logo */
+.csumb-logo {
+    width: 120px;
+    height: auto;
+}
+
+/* Makes the form look nicer on phones */
+@media screen and (max-width: 600px) {
+    .signup-card {
+        max-width: 95%;
+    }
+
+    .footer-box {
+        max-width: 95%;
+    }
+
+    .signup-header h1 {
+        font-size: 32px;
+    }
+}
