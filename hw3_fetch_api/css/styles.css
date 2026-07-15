@@ -1,0 +1,119 @@
+/* Whole page background */
+body {
+    background-image: linear-gradient(
+        rgba(16, 24, 32, 0.75),
+        rgba(16, 24, 32, 0.75)
+    ), url("../img/background.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Main header */
+.page-header {
+    background: linear-gradient(135deg, #00b5cc, #7ac142);
+    border-radius: 18px;
+    color: white;
+    box-shadow: 0 0 18px rgba(0, 181, 204, 0.5);
+}
+
+/* Header title */
+.page-header h1 {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Box for assignment info and search */
+.info-box,
+.search-box {
+    background-color: #1f2a336c;
+    border-radius: 18px;
+    box-shadow: 0 0 14px rgba(122, 193, 66, 0.25);
+}
+
+/* Labels */
+.form-label {
+    font-weight: bold;
+    color: #7ac142;
+}
+
+/* Inputs and dropdown */
+.form-control,
+.form-select {
+    border-radius: 12px;
+    border: 2px solid #00b5cc;
+}
+
+/* Button styling */
+.btn-success {
+    background-color: #7ac142;
+    border-color: #7ac142;
+    color: #101820;
+    font-weight: bold;
+}
+
+/* Button hover */
+.btn-success:hover {
+    background-color: #00b5cc;
+    border-color: #00b5cc;
+    color: white;
+}
+
+/* Character result card */
+.character-card {
+    background-color: #1f2a33;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 0 14px rgba(0, 181, 204, 0.35);
+    margin-bottom: 25px;
+    height: 100%;
+}
+
+/* Character image */
+.character-card img {
+    width: 100%;
+    height: auto;
+}
+
+/* Character info inside card */
+.character-info {
+    padding: 18px;
+}
+
+/* Character name */
+.character-info h3 {
+    color: #7ac142;
+    font-weight: bold;
+}
+
+/* Character text */
+.character-info p {
+    margin-bottom: 7px;
+}
+
+/* Footer box */
+.footer-box {
+    background-color: #1f2a33;
+    border-radius: 18px;
+    box-shadow: 0 0 14px rgba(122, 193, 66, 0.25);
+}
+
+/* Footer text */
+.footer-box p {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* CSUMB logo */
+.csumb-logo {
+    width: 120px;
+    height: auto;
+    mix-blend-mode: multiply;
+    background-color: transparent;
+    border-radius: 8px;
+}
