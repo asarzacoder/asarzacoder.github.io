@@ -1,86 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- This tells the browser what character set to use -->
-    <meta charset="UTF-8">
+    <head>
+        <!-- This tells the browser what character set to use -->
+        <meta charset="UTF-8">
 
-    <!-- This helps the page fit on different screen sizes -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- This helps the page fit better on phones and smaller screens -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- This title shows in the browser tab -->
-    <title>Python Programming Language</title>
+        <!-- This is the title that shows up in the browser tab -->
+        <title> Programming Languages </title>
 
-    <!-- This connects this page to my CSS file -->
-    <link rel="stylesheet" href="style.css">
+        <!-- This connects our HTML page to our external CSS File located in CSS folder -->
+        <link href="css/styles.css" rel="stylesheet">
+
+    </head>
     
-</head>
-<body>
+    <body>
 
-    <!-- Header for the Python page -->
-    <header>
-        <h1>Python</h1>
-        <p>A beginner-friendly programming language</p>
-    </header>
+        <!-- This is the main header area of my page -->
+        <header>
+            <h1> Python </h1>
+            <p> The Language Of Today and Tomorrow! </p>
+        </header>
 
-    <!-- Same navigation menu on every page -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="python.html">Python</a>
-        <a href="java.html">Java</a>
-        <a href="cpp.html">C++</a>
-    </nav>
+        <!-- This navigation menu lets users move between all four pages -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="python.html">Python</a>
+            <a href="java.html">Java</a>
+            <a href="cpp.html">C++</a>
+        </nav>
+        
+        <!-- Main content for this page -->
+        <main>
+            <section>
+                <h2> What is Python? </h2>
 
-    <!-- Main content for this page -->
-    <main>
-        <section>
-            <h2>What Is Python?</h2>
+                <p> Python is a high-level, interpreted programming language known for its 
+                    simplicity, readablity, and versatility. It's used everyday - from web apps and 
+                    automation tools to data science and artificial intelligence. Whether you’re 
+                    streaming a show, booking a flight, or chatting with an AI, Python is likely 
+                    working behind the scenes.
+                </p>
+                
+                <h2> Creator of Python </h2>
 
-            <p>
-                Python is a programming language known for being readable and beginner-friendly.
-                Its code often looks closer to regular English compared to some other languages.
-                Because of this, many students learn Python early when they are starting to code.
-            </p>
+                <p>
+                    Python was created by Guido van Rossum and first released on February 20, 1991. 
+                    What makes Python unique is that it began as the vision and work of a single person. 
+                    Unlike most languages born in big tech companies, Python was created by Guido 
+                    – driven by a simple goal: to make programming more intuitive and enjoyable.                        
+                </p>
+            </section>
 
-            <p>
-                Python is used in many areas of computer science. People use it for web development,
-                automation, data analysis, artificial intelligence, and small programs that solve
-                everyday problems.
-            </p>
-        </section>
+            <!-- Figure keeps my image and caption grouped together  -->
+             <!-- alt is used for people who use screen readers. And if image does not load, it will show description of image -->
+            <figure>
+                <img src="img/pythonPage.jpg" alt="Python showing in a code">
+                <figcaption> Simplicity, Readability, and Versatility! </figcaption>
+            </figure>
+            </main>
 
-        <!-- Figure keeps my image and caption grouped together -->
-        <figure>
-            <img src="images/pythonPage.jpg" alt="Python programming code on a screen">
-            <figcaption>Python is often used because the syntax is easier to read.</figcaption>
-        </figure>
+            <section class="card">
+                <h2> Why People Use Python </h2>
 
-        <!-- Card is a CSS class I made to style this content box -->
-        <section class="card">
-            <h2>Why People Use Python</h2>
+                <ul>
+                    <li> It's easy to learn – its clear and readable syntax helps you focus on problem-solving, 
+                        not on memorizing complex rules. 
+                    </li>
+                    <li> It's fast to use – you can build and test ideas quickly, whether it’s a 
+                        simple script or a full application.
+                    </li>
+                    <li> It's free and open – Python is open source and runs on any major platform 
+                        – Windows, macOS, Linux, or even Raspberry Pi.
+                    </li>
+                </ul>
+            </section>
 
-            <ul>
-                <li>It is easier to read than many other languages.</li>
-                <li>It has many libraries for different types of projects.</li>
-                <li>It is used in schools, companies, and personal projects.</li>
-                <li>It works well for quick scripts and automation.</li>
-            </ul>
-        </section>
+            <section>
+                <h2> Source </h2>
 
-        <section>
-            <h2>Source</h2>
+                <!-- This is where I linked the source I used for this page -->
+                 <p>
+                    Learn more from
+                    <a href="https://pythoninstitute.org/about-python" target="_blank"> PythonInstitute.org - About Python </a>
+                 </p>
+            </section>
 
-            <!-- This is where I linked the source I used for this page -->
-            <p>
-                Learn more from
-                <a href="https://www.python.org/about/" target="_blank">Python.org - About Python</a>.
-            </p>
-        </section>
-    </main>
+        </main>
 
-    <!-- Footer for the bottom of the page -->
-    <footer>
-        <p>Homework 1: HTML and CSS</p>
-    </footer>
+        
+        
+            <!-- This is the footer at the bottom of the page -->
+             <footer>
+                <hr>
+                CST336 Internet Programming. 2026&copy; Sarza <br>
+                <strong> Disclaimer: </strong> The information in this webpage is fictitious. <br>
+             </footer>
 
-</body>
+    </body>
 </html>

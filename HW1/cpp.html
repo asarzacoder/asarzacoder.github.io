@@ -1,95 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- This tells the browser what character set to use -->
-    <meta charset="UTF-8">
+    <head>
+        <!-- This tells the browser what character set to use -->
+        <meta charset="UTF-8">
 
-    <!-- This helps the page fit on phones and smaller screens -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- This helps the page fit better on phones and smaller screens -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- This title shows in the browser tab -->
-    <title>C++ Programming Language</title>
+        <!-- This is the title that shows up in the browser tab -->
+        <title> Programming Languages </title>
 
-    <!-- This connects this page to my external CSS file -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+        <!-- This connects our HTML page to our external CSS File located in CSS folder -->
+        <link href="css/styles.css" rel="stylesheet">
 
-    <!-- Header for the C++ page -->
-    <header>
-        <h1>C++</h1>
-        <p>A powerful language used when speed and control matter</p>
-    </header>
+    </head>
+    
+    <body>
 
-    <!-- Same navigation menu on every page -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="python.html">Python</a>
-        <a href="java.html">Java</a>
-        <a href="cpp.html">C++</a>
-    </nav>
+        <!-- This is the main header area of my page -->
+        <header>
+            <h1> C++ Programming </h1>
+            <p> Building Software Systems and Applications </p>
+        </header>
 
-    <!-- Main content for the C++ page -->
-    <main>
-        <section>
-            <h2>What Is C++?</h2>
+        <!-- This navigation menu lets users move between all four pages -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="python.html">Python</a>
+            <a href="java.html">Java</a>
+            <a href="cpp.html">C++</a>
+        </nav>
 
-            <p>
-                C++ is a programming language used when programs need to be fast and efficient.
-                It gives programmers more control over how a program uses memory and computer
-                resources. Because of this, C++ is common in performance-heavy software.
-            </p>
+        <main>
 
-            <p>
-                C++ is used in video games, operating systems, embedded systems, browsers,
-                and software where speed is important. It is more complex than Python and Java,
-                but it is useful for learning how computers work at a deeper level.
-            </p>
-        </section>
+            <section>
 
-        <!-- Figure keeps my image and caption together -->
-        <figure>
-            <img src="images/cppPage.jpg" alt="C++ programming code on a computer screen">
-            <figcaption>C++ is often used for programs that need high performance.</figcaption>
-        </figure>
+                <h2> What is C++? </h2>
 
-        <!-- Card is a CSS class I made to make this content stand out -->
-        <section class="card">
-            <h2>Common Uses of C++</h2>
+                <p>
+                    C++ is a programming language that gives developers the ability to build
+                    software systems and applications. C++ provides features that allow detailed
+                    control over system resources, such as direct memory management, low-level data 
+                    manipulation, and direct interaction with hardware interfaces, which are 
+                    essential for system-level programming, operating system development and 
+                    performance-critical applications.
+                </p>
 
-            <ul>
-                <li>Game development</li>
-                <li>Operating systems</li>
-                <li>Embedded systems</li>
-                <li>Browsers and performance-heavy software</li>
-            </ul>
-        </section>
+                <p>
+                    Programmers can write more efficient programs that can take full advantage 
+                    of the underlying hardware’s capabilities without the overhead that comes 
+                    with more abstracted, higher-level languages. For these reasons, C++ has 
+                    long been able to support various types of infrastructure.
+                </p>
 
-        <section>
-            <h2>Why C++ Is Important</h2>
+            </section>
 
-            <p>
-                C++ is important because it teaches programmers about performance, memory,
-                and how software interacts with hardware. Even though it can be harder for
-                beginners, learning C++ can make other programming concepts easier to understand later.
-            </p>
-        </section>
+            <figure>
+                <img src="img/cppPage.jpg" alt="Symbol of c++">
+                <figcaption> Language For Innovating Systems and Applications </figcaption>
+            </figure>
 
-        <section>
-            <h2>Source</h2>
+            <section>
+                <h2> Features of C++ </h2>
 
-            <!-- This is where I linked the source I used for this page -->
-            <p>
-                Learn more from
-                <a href="https://isocpp.org/" target="_blank">Standard C++ Foundation</a>.
-            </p>
-        </section>
-    </main>
+                <p> C++ shines for its capabilities and the ability to tune hardware interactions,
+                    catering well to tasks requiring top-notch performance and intricate data handling.
+                </p>
 
-    <!-- Footer for the bottom of the page -->
-    <footer>
-        <p>Homework 1: HTML and CSS</p>
-    </footer>
+                <!-- This creates two columns in our C++ page  -->
+                <div class="two-column">
 
-</body>
+                    <!-- This is the left column -->
+                    <div class="column">
+                    <h3> Features </h3>
+                    <ul>
+                        <li> Object-oriented Programming </li>
+                        <li> Memory Management </li>
+                        <li> Standard Template Library (STL) </li>
+                        <li> Performance </li>
+                    </ul>
+                    </div>
+
+                     <!-- This is the right column -->
+                    <div class="column">
+                        <h3> Description </h3>
+                        <ul>
+                            <li> Encapsulation, inheritance and polymorphism are hallmarks of C++, 
+                                enabling the creation of reusable code and complex applications.
+                            </li>
+
+                            <li> C++ provides precise control over memory usage via pointers and references, 
+                                essential for resource-constrained applications and performance-critical systems.
+                            </li>
+
+                            <li> A powerful library of data structures and algorithms, the STL is integral 
+                                to writing efficient C++ code.
+                            </li>
+
+                            <li> With its system-level capabilities, C++ is frequently the language of choice for 
+                                software that requires optimal performance, from game engines to enterprise applications.
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <section>
+                <h2> Source </h2>
+
+                <!-- This is where I linked the source I used for this page -->
+                 <p>
+                    Learn more from
+                    <a href="https://thenewstack.io/introduction-to-c-programming-language/" target="_blank"> TheNewStack.io - Introduction to C Programming </a>
+                 </p>
+            </section>
+            
+        </main>
+        
+            <!-- This is the footer at the bottom of the page -->
+             <footer>
+                <hr>
+                CST336 Internet Programming. 2026&copy; Sarza <br>
+                <strong> Disclaimer: </strong> The information in this webpage is fictitious. <br>
+             </footer>
+
+    </body>
 </html>
