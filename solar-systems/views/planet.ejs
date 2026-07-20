@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Helps the page fit correctly on phones and smaller screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Loads our external space theme -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Shows the selected planet name on the browser tab -->
+  <title><%= planetName %> | Solar System</title>
+</head>
+
+<body>
+
+  <!-- Adds the shared header and navigation menu -->
+  <%- include("partials/header.ejs") %>
+
+  <main>
+
+    <h2>Planet <%= planetName %></h2>
+
+    <%
+      // Backup images are used because some package image links are broken
+      const backupImages = {
+        Mars: "https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg",
+        Jupiter: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg",
+        Uranus: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg"
+      };
+
+      // Uses a backup image when needed, otherwise it uses the package image
+      const planetImage = backupImages[planetName] || planetInfo.image;
+    %>
+
+    <!-- Displays the image for the selected planet -->
+    <% if (planetImage) { %>
+      <img
+        src="<%= planetImage %>"
+        alt="Image of <%= planetName %>"
+      >
+    <% } %>
+
+    <!-- Displays every property returned by the planet package -->
+    <section class="planet-info">
+
+      <% Object.entries(planetInfo).forEach(([property, value]) => { %>
+
+        <!-- Skips the image property since the image is already shown above -->
+        <% if (property !== "image") { %>
+
+          <p>
+            <strong><%= property %>:</strong>
+
+            <!-- Turns URL values into clickable links -->
+            <% if (
+              typeof value === "string" &&
+              (value.startsWith("http://") || value.startsWith("https://"))
+            ) { %>
+
+              <a href="<%= value %>" target="_blank" rel="noopener noreferrer">
+                <%= value %>
+              </a>
+
+            <% } else if (Array.isArray(value)) { %>
+
+              <!-- Displays array values as a clean comma-separated list -->
+              <%= value.join(", ") %>
+
+            <% } else { %>
+
+              <!-- Displays regular text and number values -->
+              <%= value %>
+
+            <% } %>
+          </p>
+
+        <% } %>
+
+      <% }); %>
+
+    </section>
+
+  </main>
+
+  <!-- Adds the shared footer -->
+  <%- include("partials/footer.ejs") %>
+
+</body>
+
+</html>

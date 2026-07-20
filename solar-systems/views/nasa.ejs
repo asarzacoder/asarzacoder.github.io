@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Helps the page fit correctly on phones and smaller screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Loads our external space theme -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Text shown on the browser tab -->
+  <title>NASA Picture of the Day</title>
+</head>
+
+<body>
+
+  <!-- Adds the shared header and navigation menu -->
+  <%- include("partials/header.ejs") %>
+
+  <main>
+
+    <h2>NASA Picture of the Day</h2>
+
+    <!-- Displays the title NASA gave the picture -->
+    <h3><%= nasaData.title %></h3>
+
+    <p>
+      <strong>Date:</strong>
+      <%= nasaData.date %>
+    </p>
+
+    <!-- NASA sometimes returns a video instead of an image -->
+    <% if (nasaData.media_type === "image") { %>
+
+      <img
+        src="<%= nasaData.url %>"
+        alt="<%= nasaData.title %>"
+        class="nasa-image"
+      >
+
+    <% } else if (nasaData.media_type === "video") { %>
+
+      <iframe
+        src="<%= nasaData.url %>"
+        title="<%= nasaData.title %>"
+        class="nasa-video"
+        allowfullscreen>
+      </iframe>
+
+    <% } %>
+
+    <!-- Displays NASA's description -->
+    <section class="nasa-description">
+      <h3>Description</h3>
+      <p><%= nasaData.explanation %></p>
+    </section>
+
+    <!-- Only displays copyright when NASA includes it -->
+    <% if (nasaData.copyright) { %>
+      <p>
+        <strong>Copyright:</strong>
+        <%= nasaData.copyright %>
+      </p>
+    <% } %>
+
+  </main>
+
+  <!-- Adds the shared footer -->
+  <%- include("partials/footer.ejs") %>
+
+</body>
+
+</html>

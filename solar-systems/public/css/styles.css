@@ -1,0 +1,177 @@
+/* Gives the whole website a dark space background */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: #050816;
+  background-image:
+    radial-gradient(circle at top, rgba(35, 55, 110, 0.35), transparent 40%),
+    linear-gradient(to bottom, #050816, #0a1024);
+}
+
+/* Lets the main section grow and push the footer to the bottom */
+main {
+  flex: 1;
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: rgba(8, 14, 35, 0.88);
+  border: 1px solid rgba(120, 160, 255, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 100, 255, 0.2);
+}
+
+/* Styles the reusable header */
+header {
+  text-align: center;
+  padding: 25px 20px;
+  background-color: rgba(3, 8, 24, 0.95);
+  border-bottom: 1px solid rgba(120, 160, 255, 0.3);
+}
+
+/* Main website title */
+header h1 {
+  margin: 0 0 20px;
+  font-size: 2.6rem;
+  letter-spacing: 2px;
+  color: #dbe8ff;
+  text-shadow: 0 0 12px rgba(90, 150, 255, 0.8);
+}
+
+/* Spaces out the navigation links */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Styles each navigation link like a small space button */
+nav a {
+  padding: 10px 14px;
+  color: white;
+  text-decoration: none;
+  background-color: #16244a;
+  border: 1px solid #4d78d8;
+  border-radius: 8px;
+  transition: 0.25s;
+}
+
+/* Adds a glow when the user hovers over a navigation link */
+nav a:hover {
+  background-color: #254b9b;
+  box-shadow: 0 0 12px rgba(70, 130, 255, 0.75);
+  transform: translateY(-2px);
+}
+
+/* Styles page headings */
+h2,
+h3 {
+  color: #b9d4ff;
+  text-shadow: 0 0 8px rgba(70, 130, 255, 0.45);
+}
+
+/* Keeps regular text readable */
+p {
+  line-height: 1.7;
+}
+
+/* Styles planet and NASA images */
+main img {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  max-height: 600px;
+  margin: 25px auto;
+  object-fit: contain;
+  border-radius: 14px;
+  border: 1px solid rgba(120, 160, 255, 0.4);
+  box-shadow: 0 0 25px rgba(35, 100, 255, 0.35);
+}
+
+/* Gives the planet information a card-style layout */
+.planet-info {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: rgba(15, 25, 55, 0.82);
+  border-radius: 12px;
+  border: 1px solid rgba(120, 160, 255, 0.25);
+}
+
+/* Adds separation between each planet property */
+.planet-info p {
+  margin: 0;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Removes the line from the last property */
+.planet-info p:last-child {
+  border-bottom: none;
+}
+
+/* Styles the NASA description box */
+.nasa-description {
+  margin-top: 30px;
+  padding: 22px;
+  background-color: rgba(15, 25, 55, 0.82);
+  border-left: 5px solid #4d78d8;
+  border-radius: 10px;
+}
+
+/* Styles NASA videos if the API returns one */
+.nasa-video {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  margin: 25px auto;
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(35, 100, 255, 0.35);
+}
+
+/* Styles links inside the page content */
+main a {
+  color: #8fbcff;
+}
+
+/* Keeps the footer at the bottom of short pages */
+footer {
+  margin-top: auto;
+  padding: 20px;
+  text-align: center;
+  color: #aebddd;
+  background-color: rgba(3, 8, 24, 0.95);
+}
+
+/* Makes the horizontal line match the space theme */
+footer hr {
+  border: none;
+  border-top: 1px solid rgba(120, 160, 255, 0.3);
+}
+
+/* Makes the layout fit smaller screens */
+@media (max-width: 700px) {
+  main {
+    width: auto;
+    margin: 20px 12px;
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  .nasa-video {
+    height: 300px;
+  }
+}

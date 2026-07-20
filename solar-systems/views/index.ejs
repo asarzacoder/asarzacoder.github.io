@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Helps the page fit correctly on phones and smaller screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Loads our external space theme -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Text shown on the browser tab -->
+  <title>Solar System</title>
+</head>
+
+<body
+  style="
+    background-image:
+      linear-gradient(rgba(1, 4, 15, 0.6), rgba(1, 4, 15, 0.8)),
+      url('<%= randomImage %>');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  "
+>
+
+  <!-- Adds the shared header and navigation menu -->
+  <%- include("partials/header.ejs") %>
+
+  <main class="home-content">
+
+    <h2>Welcome to the Solar System</h2>
+
+    <p>
+      Explore all eight planets and view NASA's Picture of the Day.
+    </p>
+
+    <!-- Shows which planet was picked for the random background -->
+    <p>
+      <strong>Featured background:</strong>
+      <%= randomPlanetName %>
+    </p>
+
+  </main>
+
+  <!-- Adds the shared footer -->
+  <%- include("partials/footer.ejs") %>
+
+</body>
+
+</html>
