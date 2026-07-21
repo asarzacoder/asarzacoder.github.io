@@ -1,0 +1,19 @@
+{
+  "name": "hw4-express",
+  "version": "1.0.0",
+  "description": "Programming Languages Express Homework",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node index.mjs"
+  },
+  "keywords": [],
+  "author": "Armando Sarza",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "language-map": "^1.0.0",
+    "node-fetch": "^3.3.2"
+  }
+}

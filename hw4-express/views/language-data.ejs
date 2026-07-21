@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- This tells the browser what character set to use -->
+  <meta charset="UTF-8">
+
+  <!-- This helps the page fit correctly on phones and smaller screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- This title shows in the browser tab -->
+  <title>Live Language Data</title>
+
+  <!-- This connects the page to our external CSS file -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+  <!-- Adds the shared header and navigation menu -->
+  <%- include("partials/header.ejs") %>
+
+  <main>
+
+    <!-- Explains where the information on this page comes from -->
+    <section>
+      <h2>Live Programming Repository Data</h2>
+
+      <p>
+        The information below comes from the GitHub REST API.
+        The API request is made in the backend inside
+        <strong>index.mjs</strong>.
+      </p>
+    </section>
+
+    <!-- Loops through every repository returned by the GitHub API -->
+    <section class="repository-grid">
+
+      <% repositories.forEach((repository) => { %>
+
+        <!-- Each repository gets its own card -->
+        <article class="repository-card">
+
+          <h3><%= repository.full_name %></h3>
+
+          <p>
+            <strong>Description:</strong>
+            <%= repository.description || "No description available" %>
+          </p>
+
+          <p>
+            <strong>Main language:</strong>
+            <%= repository.language || "Not listed" %>
+          </p>
+
+          <p>
+            <strong>Stars:</strong>
+            <%= repository.stargazers_count.toLocaleString() %>
+          </p>
+
+          <p>
+            <strong>Forks:</strong>
+            <%= repository.forks_count.toLocaleString() %>
+          </p>
+
+          <p>
+            <strong>Open issues:</strong>
+            <%= repository.open_issues_count.toLocaleString() %>
+          </p>
+
+          <p>
+            <strong>Last updated:</strong>
+            <%= new Date(repository.updated_at).toLocaleDateString() %>
+          </p>
+
+          <!-- Opens the real GitHub repository in a new tab -->
+          <p>
+            <a
+              href="<%= repository.html_url %>"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Repository on GitHub
+            </a>
+          </p>
+
+        </article>
+
+      <% }); %>
+
+    </section>
+
+    <!-- This section clearly names the API for the assignment -->
+    <section class="card">
+      <h2>API Used</h2>
+
+      <p>
+        This app uses the <strong>GitHub REST API</strong> to display
+        current repository information for Python, Java, and C++ projects.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Adds the reusable footer -->
+  <%- include("partials/footer.ejs") %>
+
+</body>
+
+</html>

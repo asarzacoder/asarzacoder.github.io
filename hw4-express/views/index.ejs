@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- This tells the browser what character set to use -->
+  <meta charset="UTF-8">
+
+  <!-- This helps the page fit correctly on phones and smaller screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- This title shows in the browser tab -->
+  <title>Programming Languages</title>
+
+  <!-- This connects the page to our external CSS file -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+  <!-- Adds the shared header and navigation menu -->
+  <%- include("partials/header.ejs") %>
+
+  <!-- Main content for the home page -->
+  <main>
+    <section class="intro">
+      <h2>What Are Programming Languages?</h2>
+
+      <p>
+        Programming languages are used to give instructions to computers.
+        They help people create websites, apps, games, operating systems,
+        and many other types of software.
+      </p>
+
+      <p>
+        Each language has its own style, rules, and common uses.
+        This website gives a simple overview of Python, Java, and C++.
+      </p>
+    </section>
+
+    <!-- Figure keeps the image and caption together -->
+    <figure>
+      <img
+        src="/img/mainCoding.jpg"
+        alt="Computer screens showing programming code"
+      >
+
+      <figcaption>
+        Programming languages help people write instructions for computers.
+      </figcaption>
+    </figure>
+
+    <section>
+      <h2>Why Programming Languages Matter</h2>
+
+      <p>
+        Programming languages allow people to solve problems using technology.
+        A programmer can build websites, organize data, create apps, and control
+        how devices work.
+      </p>
+
+      <p>
+        Different languages are useful for different jobs. Python is often used
+        for automation and data, Java is common in business software, and C++ is
+        used when speed and control are important.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>What Is New in HW 4?</h2>
+
+      <p>
+        This Express version of HW 1 uses EJS views, reusable partials,
+        data from a Node package, and live information from the GitHub API.
+      </p>
+    </section>
+  </main>
+
+  <!-- Adds the shared footer -->
+  <%- include("partials/footer.ejs") %>
+
+</body>
+
+</html>

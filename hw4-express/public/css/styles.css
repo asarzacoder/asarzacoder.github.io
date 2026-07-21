@@ -1,0 +1,141 @@
+/* This changes the basic look for the whole website */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #222222;
+  line-height: 1.6;
+}
+
+/* This styles the big title area at the top */
+header {
+  background-color: #1f3c88;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+/* This removes extra space around the main title */
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+/* This styles the short sentence under the title */
+header p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* This styles the navigation bar */
+nav {
+  background-color: #17224d;
+  text-align: center;
+  padding: 12px;
+}
+
+/* This styles each navigation link */
+nav a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  margin: 6px 15px;
+  font-weight: bold;
+}
+
+/* This changes a link when the mouse moves over it */
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* This keeps the main content from stretching too wide */
+main {
+  flex: 1;
+  width: 85%;
+  max-width: 1100px;
+  margin: 25px auto;
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+/* This adds space between sections */
+section {
+  margin-bottom: 25px;
+}
+
+/* This styles the smaller headings */
+h2 {
+  color: #1f3c88;
+  border-bottom: 2px solid #d6dce8;
+  padding-bottom: 5px;
+}
+
+/* This keeps page images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Figure keeps an image and caption together */
+figure {
+  text-align: center;
+  margin: 25px 0;
+}
+
+/* This styles the image caption */
+figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #555555;
+}
+
+/* This creates a simple card for important content */
+.card {
+  background-color: #eef3ff;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px #cccccc;
+}
+
+/* This styles links inside the main content */
+main a {
+  color: #1f3c88;
+}
+
+/* This styles the reusable footer */
+footer {
+  margin-top: auto;
+  padding: 15px;
+  text-align: center;
+  background-color: #17224d;
+  color: white;
+}
+
+/* This makes the footer line match the theme */
+footer hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* This makes the site fit better on smaller screens */
+@media (max-width: 700px) {
+  header h1 {
+    font-size: 28px;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  main {
+    width: 92%;
+    padding: 18px;
+  }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- This tells the browser what character set to use -->
+  <meta charset="UTF-8">
+
+  <!-- This helps the page fit correctly on phones and smaller screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- This title shows in the browser tab -->
+  <title>C++ Programming Language</title>
+
+  <!-- This connects the page to our external CSS file -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+  <!-- Adds the shared header and navigation menu -->
+  <%- include("partials/header.ejs") %>
+
+  <main>
+
+    <!-- Main introduction for the C++ page -->
+    <section>
+      <h2>What Is C++?</h2>
+
+      <p>
+        C++ is a programming language used when programs need to be fast and
+        efficient. It gives programmers more control over memory and computer
+        resources.
+      </p>
+
+      <p>
+        C++ is common in video games, operating systems, embedded systems,
+        browsers, and other software where performance matters.
+      </p>
+    </section>
+
+    <!-- Figure keeps the image and caption together -->
+    <figure>
+      <img
+        src="/img/cppPage.jpg"
+        alt="C++ programming code on a computer screen"
+      >
+
+      <figcaption>
+        C++ is often used for programs that need high performance.
+      </figcaption>
+    </figure>
+
+    <!-- This card keeps the original HW 1 information -->
+    <section class="card">
+      <h2>Common Uses of C++</h2>
+
+      <ul>
+        <li>Game development</li>
+        <li>Operating systems</li>
+        <li>Embedded systems</li>
+        <li>Browsers and performance-heavy software</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Why C++ Is Important</h2>
+
+      <p>
+        C++ teaches programmers about memory, performance, and how software
+        interacts with hardware. Learning it also helps students understand
+        lower-level programming ideas.
+      </p>
+    </section>
+
+    <!-- This section displays real data from the language-map Node package -->
+    <section>
+      <h2>Node Package Information</h2>
+
+      <p>
+        The information below comes from the
+        <strong>language-map</strong> Node package.
+      </p>
+
+      <div class="card">
+
+        <p>
+          <strong>Language type:</strong>
+          <%= cppInfo.type || "Not available" %>
+        </p>
+
+        <p>
+          <strong>Common extensions:</strong>
+
+          <% if (cppInfo.extensions) { %>
+            <%= cppInfo.extensions.join(", ") %>
+          <% } else { %>
+            Not available
+          <% } %>
+        </p>
+
+        <p>
+          <strong>Common filenames:</strong>
+
+          <% if (cppInfo.filenames) { %>
+            <%= cppInfo.filenames.join(", ") %>
+          <% } else { %>
+            Not available
+          <% } %>
+        </p>
+
+        <p>
+          <strong>Aliases:</strong>
+
+          <% if (cppInfo.aliases) { %>
+            <%= cppInfo.aliases.join(", ") %>
+          <% } else { %>
+            Not available
+          <% } %>
+        </p>
+
+        <p>
+          <strong>Language color:</strong>
+          <%= cppInfo.color || "Not available" %>
+        </p>
+
+      </div>
+    </section>
+
+    <!-- Source used for the basic C++ information -->
+    <section>
+      <h2>Source</h2>
+
+      <p>
+        Learn more from
+        <a
+          href="https://isocpp.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Standard C++ Foundation
+        </a>.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Adds the reusable footer -->
+  <%- include("partials/footer.ejs") %>
+
+</body>
+
+</html>

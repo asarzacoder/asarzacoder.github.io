@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- This tells the browser what character set to use -->
+  <meta charset="UTF-8">
+
+  <!-- This helps the page fit correctly on phones and smaller screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- This title shows in the browser tab -->
+  <title>Java Programming Language</title>
+
+  <!-- This connects the page to our external CSS file -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+  <!-- Adds the shared header and navigation menu -->
+  <%- include("partials/header.ejs") %>
+
+  <main>
+
+    <!-- Main introduction for the Java page -->
+    <section>
+      <h2>What Is Java?</h2>
+
+      <p>
+        Java is a programming language used to build many types of software.
+        It is known for being object-oriented, which means programmers organize
+        code into classes and objects.
+      </p>
+
+      <p>
+        Java is often used for Android apps, web applications, business programs,
+        and backend systems. It is also used in many computer science classes.
+      </p>
+    </section>
+
+    <!-- Figure keeps the image and caption together -->
+    <figure>
+      <img
+        src="/img/javaPage.jpg"
+        alt="Java programming code on a computer screen"
+      >
+
+      <figcaption>
+        Java is commonly used for apps, business software, and backend systems.
+      </figcaption>
+    </figure>
+
+    <!-- This section uses two columns like the original HW 1 page -->
+    <section>
+      <h2>Java Overview</h2>
+
+      <div class="two-column">
+
+        <!-- Left side of the two-column layout -->
+        <div class="column">
+          <h3>Common Uses</h3>
+
+          <ul>
+            <li>Android app development</li>
+            <li>Backend web systems</li>
+            <li>Business applications</li>
+            <li>Object-oriented programming practice</li>
+          </ul>
+        </div>
+
+        <!-- Right side of the two-column layout -->
+        <div class="column">
+          <h3>Why Students Learn It</h3>
+
+          <p>
+            Java helps students learn classes, objects, methods, and program
+            structure. Its stricter syntax also gives beginners practice writing
+            organized code.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- This section displays real data from the language-map Node package -->
+    <section>
+      <h2>Node Package Information</h2>
+
+      <p>
+        The information below comes from the
+        <strong>language-map</strong> Node package.
+      </p>
+
+      <div class="card">
+
+        <p>
+          <strong>Language type:</strong>
+          <%= javaInfo.type || "Not available" %>
+        </p>
+
+        <p>
+          <strong>Common extensions:</strong>
+
+          <% if (javaInfo.extensions) { %>
+            <%= javaInfo.extensions.join(", ") %>
+          <% } else { %>
+            Not available
+          <% } %>
+        </p>
+
+        <p>
+          <strong>Common filenames:</strong>
+
+          <% if (javaInfo.filenames) { %>
+            <%= javaInfo.filenames.join(", ") %>
+          <% } else { %>
+            Not available
+          <% } %>
+        </p>
+
+        <p>
+          <strong>Aliases:</strong>
+
+          <% if (javaInfo.aliases) { %>
+            <%= javaInfo.aliases.join(", ") %>
+          <% } else { %>
+            Not available
+          <% } %>
+        </p>
+
+        <p>
+          <strong>Language color:</strong>
+          <%= javaInfo.color || "Not available" %>
+        </p>
+
+      </div>
+    </section>
+
+    <!-- Source used for the basic Java information -->
+    <section>
+      <h2>Source</h2>
+
+      <p>
+        Learn more from
+        <a
+          href="https://dev.java/learn/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Dev.java
+        </a>.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Adds the reusable footer -->
+  <%- include("partials/footer.ejs") %>
+
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- This tells the browser what character set to use -->
+  <meta charset="UTF-8">
+
+  <!-- This helps the page fit correctly on phones and smaller screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- This title shows in the browser tab -->
+  <title>Python Programming Language</title>
+
+  <!-- This connects the page to our external CSS file -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+  <!-- Adds the shared header and navigation menu -->
+  <%- include("partials/header.ejs") %>
+
+  <main>
+
+    <!-- Main introduction for the Python page -->
+    <section>
+      <h2>What Is Python?</h2>
+
+      <p>
+        Python is a programming language known for being readable and
+        beginner-friendly. Its code often looks closer to regular English
+        than some other programming languages.
+      </p>
+
+      <p>
+        Python is used for web development, automation, data analysis,
+        artificial intelligence, and many other types of software projects.
+      </p>
+    </section>
+
+    <!-- Figure keeps the image and caption together -->
+    <figure>
+      <img
+        src="/img/pythonPage.jpg"
+        alt="Python programming code on a computer screen"
+      >
+
+      <figcaption>
+        Python is popular because its syntax is easier to read.
+      </figcaption>
+    </figure>
+
+    <!-- This card shows the original HW 1 information -->
+    <section class="card">
+      <h2>Why People Use Python</h2>
+
+      <ul>
+        <li>It is easier to read than many other languages.</li>
+        <li>It has many libraries for different types of projects.</li>
+        <li>It works well for automation and quick scripts.</li>
+        <li>It is used in schools, companies, and personal projects.</li>
+      </ul>
+    </section>
+
+    <!-- This section displays real data from the language-map Node package -->
+    <section>
+      <h2>Node Package Information</h2>
+
+      <p>
+        The information below comes from the
+        <strong>language-map</strong> Node package.
+      </p>
+
+      <div class="card">
+        <p>
+          <strong>Language type:</strong>
+          <%= pythonInfo.type || "Not available" %>
+        </p>
+
+        <p>
+          <strong>Common extensions:</strong>
+
+          <% if (pythonInfo.extensions) { %>
+            <%= pythonInfo.extensions.join(", ") %>
+          <% } else { %>
+            Not available
+          <% } %>
+        </p>
+
+        <p>
+          <strong>Common filenames:</strong>
+
+          <% if (pythonInfo.filenames) { %>
+            <%= pythonInfo.filenames.join(", ") %>
+          <% } else { %>
+            Not available
+          <% } %>
+        </p>
+
+        <p>
+          <strong>Interpreters:</strong>
+
+          <% if (pythonInfo.interpreters) { %>
+            <%= pythonInfo.interpreters.join(", ") %>
+          <% } else { %>
+            Not available
+          <% } %>
+        </p>
+
+        <p>
+          <strong>Language color:</strong>
+          <%= pythonInfo.color || "Not available" %>
+        </p>
+      </div>
+    </section>
+
+    <!-- Source used for the basic Python information -->
+    <section>
+      <h2>Source</h2>
+
+      <p>
+        Learn more from
+        <a href="https://www.python.org/about/" target="_blank" rel="noopener noreferrer">
+          Python.org
+        </a>.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Adds the reusable footer -->
+  <%- include("partials/footer.ejs") %>
+
+</body>
+
+</html>
