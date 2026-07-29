@@ -1,0 +1,106 @@
+<%- include("partials/header.ejs") %>
+
+<body>
+
+  <main class="container page-container">
+
+    <h1>Quote Finder</h1>
+
+    <nav>
+      <a href="/">Home</a>
+    </nav>
+
+    <section class="search-container">
+
+      <!-- Sends the entered keyword to the keyword route 1 -->
+      <form action="/searchByKeyword" method="GET">
+        <label for="keyword">Keyword:</label>
+
+        <input
+          type="text"
+          id="keyword"
+          name="keyword"
+          required>
+
+        <button class="btn btn-info">
+          Search by Keyword
+        </button>
+      </form>
+
+      <!-- Sends the selected author ID to the author route 2 -->
+      <form action="/searchByAuthor" method="GET">
+        <label for="authorId">Author:</label>
+
+        <select id="authorId" name="authorId">
+
+          <!-- Loops through the authors retrieved from the database 3 -->
+          <% for (const author of authors) { %>
+
+            <option value="<%= author.authorId %>">
+              <%= author.firstName %> <%= author.lastName %>
+            </option>
+
+          <% } %>
+
+        </select>
+
+        <button class="btn btn-info">
+          Search by Author
+        </button>
+      </form>
+
+      <!-- Sends the selected category to the category route 4 -->
+      <form action="/searchByCategory" method="GET">
+        <label for="category">Category:</label>
+
+        <select id="category" name="category">
+
+          <!-- Loops through the unique categories from the database 5 -->
+          <% for (const item of categories) { %>
+
+            <option value="<%= item.category %>">
+              <%= item.category %>
+            </option>
+
+          <% } %>
+
+        </select>
+
+        <button class="btn btn-info">
+          Search by Category
+        </button>
+      </form>
+
+      <!-- Sends the minimum and maximum number of likes 6 -->
+      <form action="/searchByLikes" method="GET">
+        <label for="minLikes">Likes:</label>
+
+        <input
+          type="number"
+          id="minLikes"
+          name="minLikes"
+          min="0"
+          placeholder="Minimum"
+          required>
+
+        <input
+          type="number"
+          id="maxLikes"
+          name="maxLikes"
+          min="0"
+          placeholder="Maximum"
+          required>
+
+        <button class="btn btn-info">
+          Search by Likes
+        </button>
+      </form>
+
+    </section>
+
+    <%- include("partials/footer.ejs") %>
+
+  </main>
+
+</body>
+</html>

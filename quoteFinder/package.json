@@ -1,0 +1,18 @@
+{
+  "name": "quotefinder",
+  "version": "1.0.0",
+  "description": "Famous Quotes Search Lab",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node index.mjs"
+  },
+  "keywords": [],
+  "author": "Armando Sarza",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "mysql2": "^3.23.2"
+  }
+}

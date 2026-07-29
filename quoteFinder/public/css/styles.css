@@ -1,0 +1,86 @@
+/* Gives the page a light blue background 1 */
+body {
+  background-color: #c9f3ff;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Controls the width and spacing of the main content 2 */
+.page-container {
+  background-color: white;
+  min-height: 100vh;
+  max-width: 1000px;
+  padding: 25px;
+}
+
+/* Centers the main heading and navigation 3 */
+h1,
+nav {
+  text-align: center;
+}
+
+/* Adds spacing below the navigation 4 */
+nav {
+  margin-bottom: 30px;
+}
+
+/* Arranges the search forms with spacing between them 5 */
+.search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin: 30px auto;
+  max-width: 800px;
+}
+
+/* Keeps form controls spaced apart 6 */
+form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Gives inputs and dropdowns consistent spacing 7 */
+input,
+select {
+  padding: 7px;
+}
+
+/* Adds separation between quote results 8 */
+.quote-card {
+  border-bottom: 1px solid #aaaaaa;
+  padding: 15px 5px;
+}
+
+/* Styles the search description 9 */
+.search-description {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Arranges the portrait and author text inside the modal 10 */
+.author-details {
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+/* Controls the portrait size 11 */
+.author-portrait {
+  max-width: 200px;
+  height: auto;
+}
+
+/* Adds space above the footer 12 */
+footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* Stacks modal information on smaller screens 13 */
+@media (max-width: 600px) {
+  .author-details {
+    flex-direction: column;
+  }
+}
