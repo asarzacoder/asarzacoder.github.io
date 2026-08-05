@@ -30,9 +30,9 @@
     <div class="form-group">
       <label for="authorId">Author</label>
 
+      <!-- Authors come from the database 3 -->
       <select id="authorId" name="authorId" required>
 
-        <!-- Selects the quote's current author 3 -->
         <% for (let i = 0; i < authors.length; i++) { %>
 
           <option
@@ -52,12 +52,22 @@
     <div class="form-group">
       <label for="category">Category</label>
 
-      <input
-        type="text"
-        id="category"
-        name="category"
-        value="<%= quoteInfo[0].category %>"
-        required>
+      <!-- Categories come from the database 4 -->
+      <select id="category" name="category" required>
+
+        <% for (let i = 0; i < categories.length; i++) { %>
+
+          <option
+            value="<%= categories[i].category %>"
+            <%= categories[i].category === quoteInfo[0].category ? "selected" : "" %>>
+
+            <%= categories[i].category %>
+
+          </option>
+
+        <% } %>
+
+      </select>
     </div>
 
     <div class="form-group">

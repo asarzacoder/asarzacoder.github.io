@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 // Lets Express use files from the public folder 5
 app.use(express.static("public"));
 
-// Connects the app to your JawsDB database 6
+// Connects the app to JawsDB using Render environment variables 6
 const conn = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -65,6 +65,7 @@ app.post("/author/new", async (req, res) => {
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
 
+    // Stores null when the author has no date of death 11
     const deathDate = req.body.deathDate || null;
 
     const params = [
@@ -90,19 +91,19 @@ app.post("/author/new", async (req, res) => {
   }
 });
 
-// Retrieves and displays all authors alphabetically 11
+// Retrieves and displays all authors alphabetically 12
 app.get("/authors", async (req, res) => {
   try {
     const sql = `
       SELECT *
       FROM q_authors
-      ORDER BY lastName
+      ORDER BY lastName, firstName
     `;
 
-    const [rows] = await conn.query(sql);
+    const [authors] = await conn.query(sql);
 
     res.render("authorList", {
-      authors: rows
+      authors
     });
   } catch (error) {
     console.error(error);
@@ -110,7 +111,7 @@ app.get("/authors", async (req, res) => {
   }
 });
 
-// Gets one author's current information for the edit form 12
+// Gets one author's information for the edit form 13
 app.get("/author/edit", async (req, res) => {
   try {
     const authorId = req.query.authorId;
@@ -123,14 +124,14 @@ app.get("/author/edit", async (req, res) => {
       WHERE authorId = ?
     `;
 
-    const [rows] = await conn.query(sql, [authorId]);
+    const [authorInfo] = await conn.query(sql, [authorId]);
 
-    if (rows.length === 0) {
+    if (authorInfo.length === 0) {
       return res.status(404).send("Author not found.");
     }
 
     res.render("editAuthor", {
-      authorInfo: rows
+      authorInfo
     });
   } catch (error) {
     console.error(error);
@@ -138,7 +139,7 @@ app.get("/author/edit", async (req, res) => {
   }
 });
 
-// Updates the selected author's information 13
+// Updates the selected author 14
 app.post("/author/edit", async (req, res) => {
   try {
     const sql = `
@@ -180,7 +181,7 @@ app.post("/author/edit", async (req, res) => {
   }
 });
 
-// Deletes the selected author 14
+// Deletes the selected author 15
 app.get("/author/delete", async (req, res) => {
   try {
     const authorId = req.query.authorId;
@@ -199,19 +200,29 @@ app.get("/author/delete", async (req, res) => {
   }
 });
 
-// Displays the form used to add a new quote 15
+// Displays the form used to add a new quote 16
 app.get("/quote/new", async (req, res) => {
   try {
-    const sql = `
+    // Gets the author list from the database 17
+    const authorSql = `
       SELECT authorId, firstName, lastName
       FROM q_authors
-      ORDER BY lastName
+      ORDER BY lastName, firstName
     `;
 
-    const [authors] = await conn.query(sql);
+    // Gets the unique category list from the database 18
+    const categorySql = `
+      SELECT DISTINCT category
+      FROM q_quotes
+      ORDER BY category
+    `;
+
+    const [authors] = await conn.query(authorSql);
+    const [categories] = await conn.query(categorySql);
 
     res.render("newQuote", {
-      authors
+      authors,
+      categories
     });
   } catch (error) {
     console.error(error);
@@ -219,7 +230,7 @@ app.get("/quote/new", async (req, res) => {
   }
 });
 
-// Adds a new quote to the database 16
+// Adds a new quote to the database 19
 app.post("/quote/new", async (req, res) => {
   try {
     const sql = `
@@ -242,16 +253,25 @@ app.post("/quote/new", async (req, res) => {
 
     await conn.query(sql, params);
 
+    // Reloads authors and categories after adding the quote 20
     const authorSql = `
       SELECT authorId, firstName, lastName
       FROM q_authors
-      ORDER BY lastName
+      ORDER BY lastName, firstName
+    `;
+
+    const categorySql = `
+      SELECT DISTINCT category
+      FROM q_quotes
+      ORDER BY category
     `;
 
     const [authors] = await conn.query(authorSql);
+    const [categories] = await conn.query(categorySql);
 
     res.render("newQuote", {
       authors,
+      categories,
       message: "Quote added!"
     });
   } catch (error) {
@@ -260,7 +280,7 @@ app.post("/quote/new", async (req, res) => {
   }
 });
 
-// Retrieves and displays all quotes with author names 17
+// Retrieves and displays all quotes with author names 21
 app.get("/quotes", async (req, res) => {
   try {
     const sql = `
@@ -278,10 +298,10 @@ app.get("/quotes", async (req, res) => {
       ORDER BY q_quotes.quoteId
     `;
 
-    const [rows] = await conn.query(sql);
+    const [quotes] = await conn.query(sql);
 
     res.render("quoteList", {
-      quotes: rows
+      quotes
     });
   } catch (error) {
     console.error(error);
@@ -289,7 +309,7 @@ app.get("/quotes", async (req, res) => {
   }
 });
 
-// Gets one quote and all authors for the edit form 18
+// Gets one quote, authors, and categories for the edit form 22
 app.get("/quote/edit", async (req, res) => {
   try {
     const quoteId = req.query.quoteId;
@@ -303,19 +323,27 @@ app.get("/quote/edit", async (req, res) => {
     const authorSql = `
       SELECT authorId, firstName, lastName
       FROM q_authors
-      ORDER BY lastName
+      ORDER BY lastName, firstName
     `;
 
-    const [quoteRows] = await conn.query(quoteSql, [quoteId]);
-    const [authors] = await conn.query(authorSql);
+    const categorySql = `
+      SELECT DISTINCT category
+      FROM q_quotes
+      ORDER BY category
+    `;
 
-    if (quoteRows.length === 0) {
+    const [quoteInfo] = await conn.query(quoteSql, [quoteId]);
+    const [authors] = await conn.query(authorSql);
+    const [categories] = await conn.query(categorySql);
+
+    if (quoteInfo.length === 0) {
       return res.status(404).send("Quote not found.");
     }
 
     res.render("editQuote", {
-      quoteInfo: quoteRows,
-      authors
+      quoteInfo,
+      authors,
+      categories
     });
   } catch (error) {
     console.error(error);
@@ -323,7 +351,7 @@ app.get("/quote/edit", async (req, res) => {
   }
 });
 
-// Updates the selected quote 19
+// Updates the selected quote 23
 app.post("/quote/edit", async (req, res) => {
   try {
     const sql = `
@@ -353,7 +381,7 @@ app.post("/quote/edit", async (req, res) => {
   }
 });
 
-// Deletes the selected quote 20
+// Deletes the selected quote 24
 app.get("/quote/delete", async (req, res) => {
   try {
     const quoteId = req.query.quoteId;
@@ -372,7 +400,7 @@ app.get("/quote/delete", async (req, res) => {
   }
 });
 
-// Uses Render's port when deployed and port 3000 locally 21
+// Uses Render's port online and port 3000 locally 25
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, "0.0.0.0", () => {
