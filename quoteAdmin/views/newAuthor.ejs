@@ -1,0 +1,133 @@
+<%- include("partials/header.ejs") %>
+
+<section class="library-panel">
+
+  <h1>Adding a New Author</h1>
+
+  <p>
+    Add a new author to the famous quotes library.
+  </p>
+
+  <!-- Shows the success message after the author is added 1 -->
+  <% if (typeof message !== "undefined") { %>
+    <p class="success-message"><%= message %></p>
+  <% } %>
+
+  <!-- Sends all author information using the POST method 2 -->
+  <form method="POST" action="/author/new" class="data-form">
+
+    <div class="form-group">
+      <label for="fName">First Name</label>
+
+      <input
+        type="text"
+        id="fName"
+        name="fName"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="lName">Last Name</label>
+
+      <input
+        type="text"
+        id="lName"
+        name="lName"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="birthDate">Date of Birth</label>
+
+      <input
+        type="date"
+        id="birthDate"
+        name="birthDate"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="deathDate">Date of Death</label>
+
+      <input
+        type="date"
+        id="deathDate"
+        name="deathDate">
+    </div>
+
+    <div class="form-group">
+      <label>Sex</label>
+
+      <div>
+        <input
+          type="radio"
+          id="male"
+          name="sex"
+          value="M"
+          required>
+
+        <label for="male">Male</label>
+
+        <input
+          type="radio"
+          id="female"
+          name="sex"
+          value="F">
+
+        <label for="female">Female</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="profession">Profession</label>
+
+      <input
+        type="text"
+        id="profession"
+        name="profession"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="country">Country</label>
+
+      <input
+        type="text"
+        id="country"
+        name="country"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="portrait">Portrait URL</label>
+
+      <input
+        type="url"
+        id="portrait"
+        name="portrait"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="biography">Biography</label>
+
+      <textarea
+        id="biography"
+        name="biography"
+        rows="7"
+        required></textarea>
+    </div>
+
+    <button class="action-button">
+      Add Author
+    </button>
+
+  </form>
+
+  <div class="page-navigation">
+    <a href="/">Back to Home</a>
+  </div>
+
+</section>
+
+<%- include("partials/footer.ejs") %>

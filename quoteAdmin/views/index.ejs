@@ -1,0 +1,42 @@
+<%- include("partials/header.ejs") %>
+
+<section class="library-panel">
+
+  <h1>Famous Quotes - Admin Section</h1>
+
+  <p>
+    Manage the authors and quotes stored in the library database.
+  </p>
+
+  <!-- Holds the four main CRUD menu buttons 1 -->
+  <div class="admin-menu">
+
+    <form action="/author/new">
+      <button class="menu-button">
+        Add Authors
+      </button>
+    </form>
+
+    <form action="/quote/new">
+      <button class="menu-button">
+        Add Quotes
+      </button>
+    </form>
+
+    <form action="/authors">
+      <button class="menu-button">
+        List Authors
+      </button>
+    </form>
+
+    <form action="/quotes">
+      <button class="menu-button">
+        List Quotes
+      </button>
+    </form>
+
+  </div>
+
+</section>
+
+<%- include("partials/footer.ejs") %>

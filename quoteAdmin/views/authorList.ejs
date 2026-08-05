@@ -1,0 +1,60 @@
+<%- include("partials/header.ejs") %>
+
+<section class="library-panel">
+
+  <h1>Author Collection</h1>
+
+  <p>
+    Browse, update, or remove authors from the library database.
+  </p>
+
+  <div class="page-navigation">
+    <a href="/">Back to Home</a>
+  </div>
+
+  <!-- Loops through all authors from the database 1 -->
+  <% for (let i = 0; i < authors.length; i++) { %>
+
+    <article class="record-card">
+
+      <div class="record-actions">
+
+        <a
+          class="update-link"
+          href="/author/edit?authorId=<%= authors[i].authorId %>">
+
+          UPDATE
+        </a>
+
+        <a
+          class="delete-link"
+          href="/author/delete?authorId=<%= authors[i].authorId %>"
+          onclick="return confirm('Delete this author?')">
+
+          DELETE
+        </a>
+
+      </div>
+
+      <h2>
+        <%= authors[i].firstName %>
+        <%= authors[i].lastName %>
+      </h2>
+
+      <p>
+        <strong>Profession:</strong>
+        <%= authors[i].profession %>
+      </p>
+
+      <p>
+        <strong>Country:</strong>
+        <%= authors[i].country %>
+      </p>
+
+    </article>
+
+  <% } %>
+
+</section>
+
+<%- include("partials/footer.ejs") %>

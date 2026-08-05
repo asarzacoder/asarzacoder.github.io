@@ -1,0 +1,80 @@
+<%- include("partials/header.ejs") %>
+
+<section class="library-panel">
+
+  <h1>Adding a New Quote</h1>
+
+  <p>
+    Add a new quote to the library collection.
+  </p>
+
+  <!-- Displays the success message after insertion 1 -->
+  <% if (typeof message !== "undefined") { %>
+    <p class="success-message"><%= message %></p>
+  <% } %>
+
+  <!-- Sends quote information using POST 2 -->
+  <form method="POST" action="/quote/new" class="data-form">
+
+    <div class="form-group">
+      <label for="quote">Quote</label>
+
+      <textarea
+        id="quote"
+        name="quote"
+        rows="6"
+        required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="authorId">Author</label>
+
+      <select id="authorId" name="authorId" required>
+
+        <!-- Loads authors from the database 3 -->
+        <% for (let i = 0; i < authors.length; i++) { %>
+
+          <option value="<%= authors[i].authorId %>">
+            <%= authors[i].firstName %>
+            <%= authors[i].lastName %>
+          </option>
+
+        <% } %>
+
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category</label>
+
+      <input
+        type="text"
+        id="category"
+        name="category"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="likes">Likes</label>
+
+      <input
+        type="number"
+        id="likes"
+        name="likes"
+        min="0"
+        required>
+    </div>
+
+    <button class="action-button">
+      Add Quote
+    </button>
+
+  </form>
+
+  <div class="page-navigation">
+    <a href="/">Back to Home</a>
+  </div>
+
+</section>
+
+<%- include("partials/footer.ejs") %>

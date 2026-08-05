@@ -1,0 +1,65 @@
+<%- include("partials/header.ejs") %>
+
+<section class="library-panel">
+
+  <h1>Quote Collection</h1>
+
+  <p>
+    Browse, update, or remove quotes from the library database.
+  </p>
+
+  <div class="page-navigation">
+    <a href="/">Back to Home</a>
+  </div>
+
+  <!-- Loops through every quote returned by MySQL 1 -->
+  <% for (let i = 0; i < quotes.length; i++) { %>
+
+    <article class="record-card">
+
+      <div class="record-actions">
+
+        <a
+          class="update-link"
+          href="/quote/edit?quoteId=<%= quotes[i].quoteId %>">
+
+          UPDATE
+        </a>
+
+        <a
+          class="delete-link"
+          href="/quote/delete?quoteId=<%= quotes[i].quoteId %>"
+          onclick="return confirm('Delete this quote?')">
+
+          DELETE
+        </a>
+
+      </div>
+
+      <p class="quote-text">
+        “<%= quotes[i].quote %>”
+      </p>
+
+      <p>
+        <strong>Author:</strong>
+        <%= quotes[i].firstName %>
+        <%= quotes[i].lastName %>
+      </p>
+
+      <p>
+        <strong>Category:</strong>
+        <%= quotes[i].category %>
+      </p>
+
+      <p>
+        <strong>Likes:</strong>
+        <%= quotes[i].likes %>
+      </p>
+
+    </article>
+
+  <% } %>
+
+</section>
+
+<%- include("partials/footer.ejs") %>

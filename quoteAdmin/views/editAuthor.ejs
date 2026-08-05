@@ -1,0 +1,142 @@
+<%- include("partials/header.ejs") %>
+
+<section class="library-panel">
+
+  <h1>Updating Author Data</h1>
+
+  <p>
+    Edit the selected author's library record.
+  </p>
+
+  <!-- Updates the selected author using POST 1 -->
+  <form method="POST" action="/author/edit" class="data-form">
+
+    <!-- Stores the author ID without displaying it 2 -->
+    <input
+      type="hidden"
+      name="authorId"
+      value="<%= authorInfo[0].authorId %>">
+
+    <div class="form-group">
+      <label for="fName">First Name</label>
+
+      <input
+        type="text"
+        id="fName"
+        name="fName"
+        value="<%= authorInfo[0].firstName %>"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="lName">Last Name</label>
+
+      <input
+        type="text"
+        id="lName"
+        name="lName"
+        value="<%= authorInfo[0].lastName %>"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="dob">Date of Birth</label>
+
+      <input
+        type="date"
+        id="dob"
+        name="dob"
+        value="<%= authorInfo[0].dobISO %>"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="dod">Date of Death</label>
+
+      <input
+        type="date"
+        id="dod"
+        name="dod"
+        value="<%= authorInfo[0].dodISO || '' %>">
+    </div>
+
+    <div class="form-group">
+      <label>Sex</label>
+
+      <div>
+        <input
+          type="radio"
+          id="male"
+          name="sex"
+          value="M"
+          <%= authorInfo[0].sex === "M" ? "checked" : "" %>>
+
+        <label for="male">Male</label>
+
+        <input
+          type="radio"
+          id="female"
+          name="sex"
+          value="F"
+          <%= authorInfo[0].sex === "F" ? "checked" : "" %>>
+
+        <label for="female">Female</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="profession">Profession</label>
+
+      <input
+        type="text"
+        id="profession"
+        name="profession"
+        value="<%= authorInfo[0].profession %>"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="country">Country</label>
+
+      <input
+        type="text"
+        id="country"
+        name="country"
+        value="<%= authorInfo[0].country %>"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="portrait">Portrait URL</label>
+
+      <input
+        type="url"
+        id="portrait"
+        name="portrait"
+        value="<%= authorInfo[0].portrait %>"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="biography">Biography</label>
+
+      <textarea
+        id="biography"
+        name="biography"
+        rows="7"
+        required><%= authorInfo[0].biography %></textarea>
+    </div>
+
+    <button class="action-button">
+      Update Author
+    </button>
+
+  </form>
+
+  <div class="page-navigation">
+    <a href="/authors">Back to Authors</a>
+  </div>
+
+</section>
+
+<%- include("partials/footer.ejs") %>

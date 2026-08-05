@@ -1,0 +1,264 @@
+/* Gives the whole site a warm library-style background 1 */
+body {
+  background:
+    linear-gradient(rgba(248, 242, 229, 0.92), rgba(248, 242, 229, 0.92)),
+    url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  color: #3a2d24;
+  font-family: Georgia, "Times New Roman", serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Creates the dark library header 2 */
+header {
+  background: linear-gradient(135deg, #5a3825, #7a5135);
+  border-bottom: 6px solid #d2a85f;
+  color: #fffaf0;
+  padding: 28px 20px;
+  text-align: center;
+}
+
+/* Styles the main site title 3 */
+header h1 {
+  color: #fffaf0;
+  font-size: 2.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 0;
+  text-shadow:
+    0 2px 2px rgba(0, 0, 0, 0.75),
+    0 0 8px rgba(255, 244, 220, 0.35);
+}
+
+/* Styles the subtitle under the main heading 4 */
+header p {
+  color: #e4cfaa;
+  margin: 8px 0 0;
+}
+
+/* Controls the main page width 5 */
+main {
+  margin: 35px auto;
+  max-width: 1050px;
+  padding: 0 20px;
+}
+
+/* Styles regular page headings 6 */
+h1,
+h2,
+h3 {
+  color: #4a2f20;
+}
+
+/* Creates a paper-like content panel 7 */
+.library-panel {
+  background-color: #fffdf7;
+  border: 1px solid #d2bea1;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(63, 42, 29, 0.16);
+  padding: 30px;
+}
+
+/* Creates the four-button home grid 8 */
+.admin-menu {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  margin-top: 30px;
+}
+
+/* Removes extra spacing around menu forms 9 */
+.admin-menu form {
+  margin: 0;
+}
+
+/* Styles the large home-page buttons 10 */
+.menu-button {
+  background: linear-gradient(145deg, #69452e, #4b2f20);
+  border: 2px solid #b88a44;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(55, 34, 22, 0.22);
+  color: #fff8e7;
+  cursor: pointer;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  min-height: 95px;
+  padding: 18px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+/* Adds a small hover effect to the menu buttons 11 */
+.menu-button:hover {
+  box-shadow: 0 8px 16px rgba(55, 34, 22, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Gives forms a cleaner layout 12 */
+.data-form {
+  display: grid;
+  gap: 18px;
+}
+
+/* Keeps labels and inputs grouped together 13 */
+.form-group {
+  display: grid;
+  gap: 7px;
+}
+
+/* Styles form labels 14 */
+label {
+  color: #4b3021;
+  font-weight: bold;
+}
+
+/* Styles text boxes, dropdowns, and text areas 15 */
+input,
+select,
+textarea {
+  background-color: #fffefa;
+  border: 1px solid #bda98c;
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: #3a2d24;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  padding: 11px;
+  width: 100%;
+}
+
+/* Adds a visible focus effect 16 */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #8a5a36;
+  box-shadow: 0 0 0 3px rgba(138, 90, 54, 0.15);
+  outline: none;
+}
+
+/* Keeps radio buttons from stretching across the page 17 */
+input[type="radio"] {
+  margin-right: 5px;
+  width: auto;
+}
+
+/* Styles normal action buttons 18 */
+.action-button {
+  background-color: #6d472f;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  padding: 12px 20px;
+}
+
+/* Darkens action buttons when hovered 19 */
+.action-button:hover {
+  background-color: #4c2f20;
+}
+
+/* Displays list records as book-like cards 20 */
+.record-card {
+  background: linear-gradient(to right, #fffdf7, #f8efdf);
+  border-left: 8px solid #754a2d;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(60, 40, 25, 0.12);
+  margin-bottom: 18px;
+  padding: 20px;
+}
+
+/* Styles record titles 21 */
+.record-card h2 {
+  margin-top: 0;
+}
+
+/* Gives quote text a book-quotation look 22 */
+.quote-text {
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* Holds update and delete links beside each other 23 */
+.record-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* Styles all links 24 */
+a {
+  color: #754a2d;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Underlines links when hovered 25 */
+a:hover {
+  color: #3e271a;
+  text-decoration: underline;
+}
+
+/* Styles update links like small buttons 26 */
+.update-link {
+  background-color: #d8b46c;
+  border-radius: 5px;
+  color: #3b281c;
+  padding: 7px 12px;
+}
+
+/* Styles delete links like small buttons 27 */
+.delete-link {
+  background-color: #934d43;
+  border-radius: 5px;
+  color: white;
+  padding: 7px 12px;
+}
+
+/* Keeps delete links white while hovered 28 */
+.delete-link:hover {
+  background-color: #6f352e;
+  color: white;
+  text-decoration: none;
+}
+
+/* Styles success messages 29 */
+.success-message {
+  background-color: #e2eed5;
+  border: 1px solid #97ad79;
+  border-radius: 6px;
+  color: #405128;
+  padding: 12px;
+}
+
+/* Styles the back-to-home area 30 */
+.page-navigation {
+  margin-bottom: 22px;
+}
+
+/* Styles the reusable footer 31 */
+footer {
+  background-color: #332117;
+  border-top: 5px solid #b88a44;
+  color: #eadbc1;
+  margin-top: 50px;
+  padding: 25px;
+  text-align: center;
+}
+
+/* Stacks the home buttons on smaller screens 32 */
+@media (max-width: 700px) {
+  .admin-menu {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .library-panel {
+    padding: 20px;
+  }
+}
